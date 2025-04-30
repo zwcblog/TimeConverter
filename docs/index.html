@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timestamp Converter Pro - Chrome Extension</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f5f7fa;
+        }
+        .hero {
+            background: linear-gradient(135deg, #3498db, #2c3e50);
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-size: 1.2em;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin: 40px 0;
+        }
+        .feature {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding: 30px;
+            width: 300px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .feature:hover {
+            transform: translateY(-5px);
+        }
+        .feature h3 {
+            color: #3498db;
+            margin-top: 0;
+        }
+        .cta {
+            text-align: center;
+            margin: 50px 0;
+        }
+        .btn {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            text-decoration: none;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: background 0.3s;
+            margin: 10px;
+        }
+        .btn:hover {
+            background: #2980b9;
+        }
+        .btn.secondary {
+            background: transparent;
+            color: #3498db;
+            border: 2px solid #3498db;
+        }
+        .btn.secondary:hover {
+            background: rgba(52, 152, 219, 0.1);
+        }
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 50px;
+        }
+        footer a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1>Timestamp Converter Pro</h1>
+        <p>A powerful Chrome extension for converting timestamps, managing time zones, and calculating date differences</p>
+    </div>
+
+    <div class="container">
+        <div class="features">
+            <div class="feature">
+                <h3>Timestamp Conversion</h3>
+                <p>Easily convert between UNIX timestamps and human-readable date formats with one click.</p>
+            </div>
+            <div class="feature">
+                <h3>Time Zone Management</h3>
+                <p>Support for all global time zones with automatic detection of your local time zone.</p>
+            </div>
+            <div class="feature">
+                <h3>Date Calculator</h3>
+                <p>Calculate the difference between two dates with precise year, month, day, hour, minute, and second details.</p>
+            </div>
+        </div>
+
+        <div class="features">
+            <div class="feature">
+                <h3>Current Time Display</h3>
+                <p>See and copy the current time with automatic updates to the second.</p>
+            </div>
+            <div class="feature">
+                <h3>Conversion History</h3>
+                <p>Automatically save your recent conversions for easy reference.</p>
+            </div>
+            <div class="feature">
+                <h3>Privacy Focused</h3>
+                <p>All operations are performed locally on your device. No data is ever collected or transmitted.</p>
+            </div>
+        </div>
+
+        <div class="cta">
+            <a href="https://chrome.google.com/webstore/detail/timestamp-converter-pro/[YOUR-EXTENSION-ID]" class="btn">Install from Chrome Web Store</a>
+            <a href="privacy-policy.html" class="btn secondary">Privacy Policy</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; <span id="year"></span> Timestamp Converter Pro. All rights reserved.</p>
+        <p>
+            <a href="https://github.com/[YOUR-USERNAME]/TimeConverter" target="_blank">View on GitHub</a> | 
+            <a href="privacy-policy.html">Privacy Policy</a>
+        </p>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html> 

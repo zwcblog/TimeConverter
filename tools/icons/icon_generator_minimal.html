@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimal Timestamp Converter Icon</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f5f5f5;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .icon {
+            width: 128px;
+            height: 128px;
+            background-color: white;
+            border-radius: 20px;
+            position: relative;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        .circular-progress {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            top: 14px;
+            left: 24px;
+            border-radius: 50%;
+            background: conic-gradient(
+                #2185d0 0deg,
+                #2185d0 270deg,
+                #e0e0e0 270deg,
+                #e0e0e0 360deg
+            );
+        }
+        
+        .circular-progress::after {
+            content: "";
+            position: absolute;
+            width: 64px;
+            height: 64px;
+            top: 8px;
+            left: 8px;
+            border-radius: 50%;
+            background-color: white;
+        }
+        
+        .time-numbers {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            top: 34px;
+            left: 44px;
+            font-size: 14px;
+            font-weight: bold;
+            color: #2185d0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2;
+        }
+        
+        .timestamp-bar {
+            position: absolute;
+            width: 100%;
+            height: 28px;
+            bottom: 0;
+            background-color: #2185d0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-family: monospace;
+            font-size: 12px;
+        }
+        
+        .binary-dots {
+            position: absolute;
+            display: flex;
+            flex-direction: row;
+            top: 100px;
+            left: 12px;
+        }
+        
+        .dot {
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            margin: 0 3px;
+        }
+        
+        .dot-1 {
+            background-color: #2185d0;
+        }
+        
+        .dot-0 {
+            background-color: #e0e0e0;
+        }
+        
+        .instructions {
+            margin-top: 20px;
+            text-align: center;
+            max-width: 500px;
+            font-size: 14px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="icon">
+            <div class="circular-progress"></div>
+            <div class="time-numbers">75%</div>
+            
+            <div class="binary-dots">
+                <div class="dot dot-1"></div>
+                <div class="dot dot-0"></div>
+                <div class="dot dot-1"></div>
+                <div class="dot dot-0"></div>
+                <div class="dot dot-1"></div>
+                <div class="dot dot-1"></div>
+                <div class="dot dot-0"></div>
+                <div class="dot dot-1"></div>
+                <div class="dot dot-1"></div>
+                <div class="dot dot-0"></div>
+                <div class="dot dot-1"></div>
+                <div class="dot dot-0"></div>
+                <div class="dot dot-1"></div>
+                <div class="dot dot-1"></div>
+                <div class="dot dot-0"></div>
+            </div>
+            
+            <div class="timestamp-bar">1625097600</div>
+        </div>
+        
+        <div class="instructions">
+            <p><strong>极简风格图标</strong>: 截取上方图标的屏幕截图，裁剪为128x128像素的正方形。</p>
+            <p>保存为PNG格式，将其命名为icon128.png。</p>
+        </div>
+    </div>
+</body>
+</html> 

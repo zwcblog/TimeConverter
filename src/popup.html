@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Timestamp Converter</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- 使用本地的 Moment.js 库 -->
+  <script src="lib/moment.min.js"></script>
+  <script src="lib/moment-timezone-with-data.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Timestamp Converter</h1>
+    
+    <!-- 当前时间显示 -->
+    <div class="current-time">
+      <span>Current Time: </span>
+      <span id="currentTime"></span>
+      <button id="copyCurrentTime" class="copy-btn">Copy</button>
+    </div>
+
+    <!-- 时区选择 -->
+    <div class="timezone-selector">
+      <label for="timezone">Timezone:</label>
+      <select id="timezone"></select>
+    </div>
+
+    <!-- 时间戳转换器 -->
+    <div class="converter">
+      <h2>Timestamp to Date</h2>
+      <input type="text" id="timestampInput" placeholder="Enter UNIX timestamp">
+      <button id="convertTimestampButton">Convert to Date</button>
+      <div class="result-container">
+        <p id="timestampResult"></p>
+        <button class="copy-btn" id="copyTimestampResult">Copy</button>
+      </div>
+      <p id="relativeTime" class="relative-time"></p>
+    </div>
+
+    <!-- 日期转换器 -->
+    <div class="converter">
+      <h2>Date to Timestamp</h2>
+      <input type="text" id="dateInput" placeholder="Enter Date (any common format)">
+      <button id="convertDateButton">Convert to Timestamp</button>
+      <div class="result-container">
+        <p id="dateResult"></p>
+        <button class="copy-btn" id="copyDateResult">Copy</button>
+      </div>
+    </div>
+
+    <!-- 日期计算器 -->
+    <div class="calculator">
+      <h2>Date Calculator</h2>
+      <div class="calc-inputs">
+        <input type="text" id="date1" placeholder="First date">
+        <input type="text" id="date2" placeholder="Second date">
+        <button id="calculateDiff">Calculate Difference</button>
+      </div>
+      <p id="dateDiffResult"></p>
+    </div>
+
+    <!-- 历史记录 -->
+    <div class="history">
+      <h2>History</h2>
+      <div id="historyList"></div>
+      <button id="clearHistory" class="clear-btn">Clear History</button>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

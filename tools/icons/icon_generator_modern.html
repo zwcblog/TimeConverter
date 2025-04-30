@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Timestamp Converter Icon</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f5f5f5;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .icon {
+            width: 128px;
+            height: 128px;
+            background: linear-gradient(145deg, #2185d0, #1a5f9e);
+            border-radius: 28px;
+            position: relative;
+            box-shadow: 0 10px 20px rgba(33, 133, 208, 0.3);
+            overflow: hidden;
+        }
+        
+        .icon::before {
+            content: "";
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            top: -100px;
+            left: -40px;
+        }
+        
+        .time-display {
+            position: absolute;
+            width: 80px;
+            height: 34px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            top: 22px;
+            left: 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 14px;
+            font-weight: bold;
+            color: #2185d0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .timestamp-display {
+            position: absolute;
+            width: 90px;
+            height: 24px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 6px;
+            bottom: 22px;
+            left: 19px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 12px;
+            font-family: monospace;
+            color: #1a5f9e;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .arrow {
+            position: absolute;
+            width: 32px;
+            height: 32px;
+            left: 48px;
+            top: 65px;
+        }
+        
+        .arrow::before, .arrow::after {
+            content: "";
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 2px;
+        }
+        
+        .arrow::before {
+            width: 20px;
+            height: 4px;
+            top: 14px;
+            left: 6px;
+        }
+        
+        .arrow::after {
+            width: 12px;
+            height: 12px;
+            border-right: 4px solid rgba(255, 255, 255, 0.9);
+            border-bottom: 4px solid rgba(255, 255, 255, 0.9);
+            background-color: transparent;
+            transform: rotate(45deg);
+            top: 8px;
+            left: 10px;
+        }
+        
+        .binary {
+            position: absolute;
+            color: rgba(255, 255, 255, 0.2);
+            font-size: 8px;
+            font-family: monospace;
+        }
+        
+        .binary-1 {
+            top: 10px;
+            right: 10px;
+        }
+        
+        .binary-2 {
+            bottom: 10px;
+            right: 15px;
+        }
+        
+        .instructions {
+            margin-top: 20px;
+            text-align: center;
+            max-width: 500px;
+            font-size: 14px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="icon">
+            <div class="binary binary-1">10110</div>
+            <div class="binary binary-2">01011</div>
+            <div class="time-display">13:45:30</div>
+            <div class="arrow"></div>
+            <div class="timestamp-display">1625097600</div>
+        </div>
+        
+        <div class="instructions">
+            <p><strong>现代风格图标</strong>: 截取上方图标的屏幕截图，然后裁剪为128x128像素的正方形。</p>
+            <p>保存为PNG格式，将其命名为icon128.png。</p>
+        </div>
+    </div>
+</body>
+</html> 

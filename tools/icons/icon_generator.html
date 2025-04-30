@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timestamp Converter Icon Generator</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f5f5f5;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .icon-wrapper {
+            position: relative;
+            width: 128px;
+            height: 128px;
+            border: 1px dashed #ccc;
+            margin-bottom: 20px;
+        }
+        
+        .icon {
+            width: 128px;
+            height: 128px;
+            background-color: transparent;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="icon-wrapper">
+            <div class="icon">
+                <canvas id="clockCanvas" width="128" height="128"></canvas>
+            </div>
+        </div>
+        
+        <div style="margin-top: 10px; padding: 10px; background-color: #fff3cd; border: 1px solid #ffeeba; color: #856404; border-radius: 4px; font-size: 12px;">
+            注意：上方虚线框大小为128×128像素，确保您的截图仅包含此区域。
+        </div>
+        
+        <div style="margin-top: 20px; display: flex; flex-direction: column; align-items: center;">
+            <button id="downloadButton" style="padding: 8px 16px; background-color: #4a7dbd; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 14px; margin-bottom: 10px;">
+                下载icon128.png图标
+            </button>
+        </div>
+        
+        <div style="margin-top: 20px; text-align: center; max-width: 500px; font-size: 14px; color: #555;">
+            <p><strong>时间戳转换器图标</strong></p>
+            <p>1. 点击"下载图标"按钮直接获取准确大小的图标文件</p>
+            <p>2. 将下载的图标文件放在扩展的根目录中</p>
+            <p>3. 确保图标文件名为 <code>icon128.png</code></p>
+            <p>4. 您还需要创建 <code>icon48.png</code> 和 <code>icon16.png</code> 两个不同尺寸的图标</p>
+            <p>5. 如需其他尺寸，您可以使用图像处理软件缩放此图标</p>
+        </div>
+    </div>
+    
+    <script>
+        // 在页面加载完成后立即绘制时钟
+        document.addEventListener('DOMContentLoaded', function() {
+            drawClock();
+        });
+        
+        // 绘制时钟函数
+        function drawClock() {
+            const canvas = document.getElementById('clockCanvas');
+            const ctx = canvas.getContext('2d');
+            
+            // 清除画布
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            // 计算中心点和半径
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 2;
+            const radius = canvas.width / 2 - 10; // 留出边缘空间
+            
+            // 绘制时钟背景
+            ctx.fillStyle = '#e6f0f9';
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, radius, 0, Math.PI * 2);
+            ctx.fill();
+            
+            // 绘制时钟边框
+            ctx.strokeStyle = '#4a7dbd';
+            ctx.lineWidth = 10;
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, radius, 0, Math.PI * 2);
+            ctx.stroke();
+            
+            // 绘制小时刻度
+            ctx.fillStyle = '#4a7dbd';
+            for (let i = 0; i < 12; i++) {
+                const angle = i * Math.PI / 6; // 每小时30度
+                
+                ctx.save();
+                ctx.translate(centerX, centerY);
+                ctx.rotate(angle);
+                
+                // 绘制刻度线
+                ctx.fillRect(radius - 18, -2, 10, 4);
+                
+                ctx.restore();
+            }
+            
+            // 绘制时针 (4点钟方向)
+            const hourAngle = Math.PI / 6 * 4; // 4小时的位置
+            ctx.save();
+            ctx.translate(centerX, centerY);
+            ctx.rotate(hourAngle);
+            ctx.fillStyle = '#4a7dbd';
+            ctx.fillRect(-2.5, -5, 5, 30); // 调整时针长度和位置
+            ctx.restore();
+            
+            // 绘制分针 (20分钟位置，略过4小时)
+            const minuteAngle = Math.PI / 6 * 4 + Math.PI / 30 * 2; // 4小时20分的位置
+            ctx.save();
+            ctx.translate(centerX, centerY);
+            ctx.rotate(minuteAngle);
+            ctx.fillStyle = '#4a7dbd';
+            ctx.fillRect(-2, -8, 4, 40); // 调整分针长度和位置
+            ctx.restore();
+            
+            // 绘制中心点
+            ctx.fillStyle = '#4a7dbd';
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, 4, 0, Math.PI * 2);
+            ctx.fill();
+        }
+        
+        // 下载图标
+        document.getElementById('downloadButton').addEventListener('click', function() {
+            const canvas = document.getElementById('clockCanvas');
+            const dataURL = canvas.toDataURL('image/png');
+            
+            const link = document.createElement('a');
+            link.download = 'icon128.png';
+            link.href = dataURL;
+            link.click();
+        });
+    </script>
+</body>
+</html> 
