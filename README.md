@@ -55,6 +55,10 @@ Timestamp Converter Pro是一个强大的Chrome扩展，帮助用户快速进行
 
 有关更详细的信息，请查看[完整文档](docs/README.md)。
 
+## 推广资料
+
+我们提供了一篇详细的[推广文章](docs/promotion.md)，描述了插件的主要特点和优势，可用于向潜在用户介绍本产品。
+
 ## 许可证
 
 MIT 
